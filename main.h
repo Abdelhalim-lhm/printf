@@ -42,6 +42,7 @@ void print_char(va_list ls)
  */
 void print_percent(va_list ls)
 {
+	(void)ls;
 	_putchar('%');
 }
 /**
@@ -58,7 +59,7 @@ int _printf(const char * const format, ...)
 		{NULL, NULL},
 		};
 	va_list ls;
-	int j, i = 0, count = 0;
+	int j, i = 0;
 
 	va_start(ls, format);
 
