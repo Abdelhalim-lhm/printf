@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * spe_func - print with the right function depend on the charater given
+ * spe_func - summon the function associed to the specifier given
  * @c: the character specifier
  * Return: pointer to the function associeted
  */

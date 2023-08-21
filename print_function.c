@@ -11,7 +11,7 @@ int _putchar(char c)
 /**
  * print_string - function that print string
  * @ls: variadic list
- * Return: 0 on success
+ * Return: the lenght of the string
  */
 int print_string(va_list ls)
 {
@@ -32,7 +32,7 @@ int print_string(va_list ls)
 /**
  * print_char - function that print a charater
  * @ls: variadic list
- * Return: the char
+ * Return: 1 the char c
  */
 int print_char(va_list ls)
 {
@@ -41,7 +41,7 @@ int print_char(va_list ls)
 /**
  * print_percent - function that print %
  * @ls: variadic list
- * Return: the percent
+ * Return: 1 the percent
  */
 int print_percent(va_list ls)
 {
