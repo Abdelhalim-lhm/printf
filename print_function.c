@@ -18,6 +18,10 @@ int print_string(va_list ls)
 	char *str = va_arg(ls, char *);
 	int i = 0;
 
+	if (str == NULL)
+	{
+		str = "(null)";
+	}
 	while (str[i])
 	{
 		_putchar(str[i]);
