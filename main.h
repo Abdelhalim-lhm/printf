@@ -5,11 +5,12 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <string.h>
+int (*spe_func(const char *c))(va_list);
 int _putchar(char);
 int _printf(const char * const format, ...);
-void print_string(va_list);
-void print_char(va_list);
-void print_percent(va_list);
+int print_string(va_list);
+int print_char(va_list);
+int print_percent(va_list);
 /**
  * struct type - Struct type
  *
@@ -19,6 +20,6 @@ void print_percent(va_list);
 typedef struct type
 {
 	char *type;
-	void (*f)(va_list);
+	int (*f)(va_list);
 } type_f;
 #endif

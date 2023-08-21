@@ -6,55 +6,30 @@
  */
 int _printf(const char * const format, ...)
 {
-	type_f frm[] = {
-		{"%", print_percent},
-		{"c", print_char},
-		{"s", print_string},
-		{NULL, NULL},
-		};
 	va_list ls;
-	int j, i = 0, count = 0;
+	int i = 0, count = 0;
 
 	va_start(ls, format);
-
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
-	while (format && format[i])
+	while (format[i])
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1] != '\0')
 		{
-		j = 0;
-			while (frm[j].type)
+			const char *specifier = &format[i + 1];
+			int (*get_spe)(va_list) = spe_func(specifier);
+
+			if (get_spe)
 			{
-				if (format[i + 1] == frm[j].type[0])
-				{
-					if (j != 0)
-					{
-						frm[j].f(ls);
-						i++;
-						count++;
-					}
-					else
-					{
-						frm[j].f(ls);
-						i++;
-					}
-				}
-			j++;
-			}
-			if (j == 0 && (format[i + 1] != 'c' || format[i + 1] != 's'))
-			{
-				_putchar(format[i]);
-				i++;
+				get_spe(ls);
+				i += 2;
 				count++;
+				continue;
 			}
 		}
-		else
-		{
-			_putchar(format[i]);
-		}
+	_putchar(format[i]);
 	i++;
 	count++;
 	}
