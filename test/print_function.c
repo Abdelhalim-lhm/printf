@@ -11,9 +11,9 @@ int _putchar(char c)
 /**
  * print_string - function that print string
  * @ls: variadic list
- * Return: nothing
+ * Return: 0 on success
  */
-void print_string(va_list ls)
+int print_string(va_list ls)
 {
 	char *str = va_arg(ls, char *);
 	int i = 0;
@@ -23,23 +23,24 @@ void print_string(va_list ls)
 		_putchar(str[i]);
 		str++;
 	}
+	return (0);
 }
 /**
  * print_char - function that print a charater
  * @ls: variadic list
- * Return: nothing
+ * Return: the char
  */
-void print_char(va_list ls)
+int print_char(va_list ls)
 {
-	_putchar(va_arg(ls, int));
+	return(_putchar(va_arg(ls, int)));
 }
 /**
  * print_percent - function that print %
  * @ls: variadic list
- * Return: nothing
+ * Return: the percent
  */
-void print_percent(va_list ls)
+int print_percent(va_list ls)
 {
 	(void)ls;
-	_putchar('%');
+	return(_putchar('%'));
 }
