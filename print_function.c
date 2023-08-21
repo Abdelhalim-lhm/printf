@@ -25,9 +25,9 @@ int print_string(va_list ls)
 	while (str[i])
 	{
 		_putchar(str[i]);
-		str++;
+		i++;
 	}
-	return (0);
+	return (i);
 }
 /**
  * print_char - function that print a charater

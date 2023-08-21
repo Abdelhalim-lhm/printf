@@ -23,9 +23,8 @@ int _printf(const char * const format, ...)
 
 			if (get_spe)
 			{
-				get_spe(ls);
+				count += get_spe(ls);
 				i += 2;
-				count++;
 				continue;
 			}
 		}
