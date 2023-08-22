@@ -55,9 +55,9 @@ int print_percent(va_list ls)
  */
 int print_int(va_list ls)
 {
-	int num = va_arg(ls, int);
+	long int num = va_arg(ls, int);
 	int count = 0;
-	int divisor = 1;
+	long int divisor = 1;
 
 	if (num == 0)
 	{
