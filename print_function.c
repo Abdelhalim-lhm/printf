@@ -70,6 +70,7 @@ int print_int(va_list ls)
 		{
 			_putchar('-');
 			num = -num;
+			count++;
 		}
 
 
