@@ -48,3 +48,48 @@ int print_percent(va_list ls)
 	(void)ls;
 	return (_putchar('%'));
 }
+/**
+ * print_int - function that prints an integer
+ * @ls: variadic list
+ * Return: number of characters printed
+ */
+int print_int(va_list ls)
+{
+	int num = va_arg(ls, int);
+	int count = 0;
+	int divisor = 1;
+
+	if (num == 0)
+	{
+		count++;
+		_putchar('0');
+	}
+	else
+	{
+		if (num < 0)
+		{
+			_putchar('-');
+			num = -num;
+		}
+
+
+		while (num / divisor > 0)
+		{
+			divisor *= 10;
+		}
+
+		divisor /= 10;
+
+		while (divisor > 0)
+		{
+			int digit = num / divisor;
+
+			_putchar('0' + digit);
+			num -= digit * divisor;
+			divisor /= 10;
+			count++;
+		}
+	}
+
+	return (count);
+}

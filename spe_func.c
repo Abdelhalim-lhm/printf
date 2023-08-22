@@ -11,6 +11,8 @@ int (*spe_func(const char *c))(va_list ls)
 		{"%", print_percent},
 		{"c", print_char},
 		{"s", print_string},
+		{"i", print_int},
+		{"d", print_int},
 		{NULL, NULL},
 		};
 
