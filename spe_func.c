@@ -14,6 +14,7 @@ int (*spe_func(const char *c))(va_list ls)
 		{"i", print_int},
 		{"d", print_int},
 		{"r", print_rev},
+		{"R", print_rota},
 		{NULL, NULL},
 		};
 
