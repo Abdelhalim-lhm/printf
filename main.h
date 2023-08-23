@@ -12,6 +12,7 @@ int print_string(va_list);
 int print_char(va_list);
 int print_percent(va_list);
 int print_int(va_list ls);
+int print_rev(va_list);
 /**
  * struct type - Struct type
  *
